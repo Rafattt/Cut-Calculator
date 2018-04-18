@@ -1,4 +1,10 @@
 const convertToFeets = (data) => {
+    console.log(data);
+
+    if((variables.roughSize()-2) % 12 ===0){// checks if data is integer
+        let size = variables.roughSize()-2;
+        return size;
+    }
 
     let splitedNumber = data.split("-");
     splitedNumberInch = splitedNumber[1].split("/");
@@ -11,7 +17,7 @@ const convertToFeets = (data) => {
         if(firstPart>=secondPart){
             wholeInch = firstPart / secondPart;
         }
-        console.log(convertToFraction(wholeInch));
+
         return convertToFraction(wholeInch);
     }
     calculateInches(splitedNumberInch[0],splitedNumberInch[1]);
