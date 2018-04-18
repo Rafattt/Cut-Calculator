@@ -20,6 +20,7 @@ const convertToFeets = (data) => {
 
         return convertToFraction(wholeInch);
     }
+    console.log("!!!!!!!!!!");
     calculateInches(splitedNumberInch[0],splitedNumberInch[1]);
     
     splitedNumber[1] = calculateInches(splitedNumberInch[0],splitedNumberInch[1]);
@@ -30,7 +31,7 @@ const convertToFeets = (data) => {
     let smallNumbersText = lastNumbersSmall[0]+"/"+lastNumbersSmall[1]+'"';
     let feetInchArray = [splitedNumber[0],splitedNumber[1],
     lastNumbersSmall[0],lastNumbersSmall[1]];
-
+    console.log("!!!!!!!!!!");
     return feetInchArray;
 }
 
