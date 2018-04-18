@@ -1,0 +1,16 @@
+
+	body,html{
+		width: 70% !important;
+		heigth: 300%!important;
+		container: 30%!important;
+	}
+	
+	#bottom-cut-draw {
+	opacity: 1;
+	background-color: red;
+}
+
+#top-cut-draw {
+	opacity: 1;
+	background-color: red;
+}
