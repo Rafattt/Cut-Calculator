@@ -39,7 +39,6 @@ let app = {
 			}
 			
 			
-			console.log(roughOpeningSize);
 			app.displaySlabSize(roughOpeningSize);
 			app.displaySlabSizeInFeets(roughOpeningSize);
 
