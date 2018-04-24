@@ -11,7 +11,6 @@ const sizeConvertion = {
         }
         fractionConvert = parseFloat((splitedNumber[0]))+
             parseFloat(splitedNumber[1]);
-            console.log(fractionConvert);
             return fractionConvert;
     },
     
