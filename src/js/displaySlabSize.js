@@ -1,4 +1,4 @@
-function displaySlabSizeInch(roSize){ // displaying slub size in "final" field
+const displaySlabSizeInch = (roSize) => { // displaying slub size in "final" field
     let slabSize = roSize -2;
     slabSize = convertToFraction(slabSize);
     document.getElementById("final").innerHTML = slabSize+'"';
@@ -22,4 +22,12 @@ const displaySlabSizeFeet = (data) => {
     
     
     
+}
+
+const resetSlabSizeinFeets = () => {
+        document.getElementById("final-feet").innerHTML = '';
+        document.getElementById("final-feet-small2").innerHTML = '';
+        document.getElementById("final-feet-small1").innerHTML = '';
+        document.getElementById("final-feet-small3").innerHTML = '';
+        document.getElementById("final-feet-small4").innerHTML = '';
 }

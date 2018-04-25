@@ -25,7 +25,7 @@ let app = {
     	}
 		});
 	},
-	slabHeight: () => {//getting height (in inches) of rough opening and choosing slab height to cut (one size bigger than RO sizes)
+	getSlabHeight: () => {//getting height (in inches) of rough opening and choosing slab height to cut (one size bigger than RO sizes)
 		document.getElementById("sub").onclick = () => { //starts when user clicks on submit button
 			let roughOpeningSize = variables.roughOpeningSize;
 			variables.roughSizeValue = parseFloat(document.getElementById("rough-size").value);
@@ -41,8 +41,8 @@ let app = {
 			
 			app.displaySlabSize(roughOpeningSize);
 			app.displaySlabSizeInFeets(roughOpeningSize);
+			app.setSlabHeight(roughOpeningSize);
 
-			
 			return roughOpeningSize;
 		}	
 	},
@@ -51,10 +51,38 @@ let app = {
 	},
 	displaySlabSizeInFeets: (roSize) => {
 		showSizeinFeets(roSize);
+	},
+	setSlabHeight: (roSize) => {
+		roSize = roSize - 2;
+
+		console.log(roSize);
+		if(roSize <= 80){
+			document.getElementById('door').style.height = '267px';
+			document.getElementById('door-height').style.height = '267px';
+			document.getElementById('door-height').style.top = '92px';
+			document.getElementById('door').style.marginTop = '93px';
+			document.getElementById('height-center').innerHTML = ('6\'-8\"');
+			
+		} else if (roSize <= 84){
+			document.getElementById('door').style.height = '280px';
+			document.getElementById('door-height').style.height = '280px';
+			document.getElementById('door-height').style.top = '79px';
+			document.getElementById('door').style.marginTop = '80px';
+			document.getElementById('height-center').innerHTML = ('7\'-0\"');
+		} else if (roSize <= 96){
+			document.getElementById('door').style.height = '320px';
+			document.getElementById('door-height').style.height = '320px';
+			document.getElementById('door-height').style.top = '39px';
+			document.getElementById('door').style.marginTop = '40px';
+			document.getElementById('height-center').innerHTML = ('8\'-0\"');
+		}
+	
+		
 	}
 }
 
 app.clickByEnter();
-app.slabHeight();
+app.getSlabHeight();
+
 
 

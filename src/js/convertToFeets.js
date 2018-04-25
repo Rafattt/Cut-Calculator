@@ -1,5 +1,19 @@
 const convertToFeets = (data) => {
 
+    const calculateInches = (firstPart, secondPart) => {
+        let wholeInch = "";
+
+        if(firstPart>=secondPart){
+            wholeInch = firstPart / secondPart;
+        } else {
+            wholeInch = firstPart + "/" + secondPart;
+            console.log(wholeInch);
+            return wholeInch; 
+        }
+
+        return convertToFraction(wholeInch);
+    }
+
     let splitedNumber = data.split("-"); //splitting rough opening text data into feets and inches
     let firstNumber = variables.roughSize().split("-");//getting first number from RO field
     firstNumber = firstNumber[0];
@@ -11,6 +25,7 @@ const convertToFeets = (data) => {
         splitedNumberInch[0],splitedNumberInch[1]/12];
         return feetInchArray;
     }else if((variables.roughSize()-2) % 12 ===0){// checks if data is integer
+        resetSlabSizeinFeets();
         let size = parseFloat(variables.roughSize())-2;
         return size;
     } else if((variables.roughSize()-2) % 12 !==0 &&variables.roughSize().indexOf("-")>0){
@@ -38,18 +53,6 @@ const convertToFeets = (data) => {
     }
     
 
-    function calculateInches(firstPart, secondPart){
-        let wholeInch = "";
-
-        if(firstPart>=secondPart){
-            wholeInch = firstPart / secondPart;
-        } else {
-            wholeInch = firstPart + "/" + secondPart;
-            console.log(wholeInch);
-            return wholeInch; 
-        }
-
-        return convertToFraction(wholeInch);
-    }
+   
 }
 
