@@ -102,7 +102,14 @@ let app = {
 	cutCalculator: (roughOpeningSize) => {
 		let bott = "";
 		let top = $('#top').val(); //getting number of inch to cut from top from input field
+		if(top !==0 && top !== "" && top.indexOf("-")>0){  //converting "0-0" format to "0.0" format
+			
+				top = sizeConvertion.convert(top);
+			} else if(top.indexOf("-")<0) {
+				top = top;
+			}
 		let totalCut = "";
+		
 		
 		if(roughOpeningSize>0 && roughOpeningSize!==""){ //if RO field is not blank setting bottom cut as slab height - (ro-2)- top trim
 			bott = (variables.getSlabHeight()-(roughOpeningSize-2))-top;
@@ -110,6 +117,7 @@ let app = {
 			bottF = new Fraction(bottF);
 			bottF = bottF.toFraction(true);
 			bottF = bottF.replace(" ", "-");
+			
 			
 			document.getElementById('bottom').value = bottF;
 			
@@ -119,6 +127,8 @@ let app = {
 		} else { //if RO field is blank set bottom cut to 0
 			bott = 0;
 		}
+
+		
 			
 		if($('#top').val()!== 0 && $('#top').val() !== ""){ //if top trim field is not blank setting totalCut value as bottom+top cuts
 			totalCut = parseFloat(bott)+parseFloat(top); //changing string to int to prevent printing "NaN"
@@ -130,6 +140,8 @@ let app = {
 		bott = (bott*10)/3; //changing bottom cut number of inches to pixels
 		top =  (top*10)/3;  //changing top cut number of inches to pixels
 		cutAnimation(roughOpeningSize, bott, top);
+
+		
 	},
 	checkbox:  () => {
 		let controlNumber = 0;
@@ -138,11 +150,13 @@ let app = {
 			$('#top').css('background-color','white');
 			$('#top').css('pointer-events', 'auto');
 			controlNumber = 1;
+			return true;
 		} else {
 			$('#top').css('background-color','lightgrey');
 			$('#top').css('pointer-events', 'none');
 			$('#top').val(0);
 			controlNumber = 0;
+			return false;
 		}
 	});
 	}

@@ -1,7 +1,6 @@
 const cutAnimation = (roSize, bott, top) => {
 
     document.getElementById('top-cut-draw').style.height = top+'px';
-console.log("11111111111");
     let roughOpeningSize = roSize;
 	if(roughOpeningSize>0 && roughOpeningSize !==""){
         document.getElementById('bottom-cut-draw').style.height = bott + 'px';
@@ -19,18 +18,19 @@ console.log("11111111111");
         bottF = bottF.replace(" ", "-");
         document.getElementById('cut-text-bottom').innerHTML = bottF;
 	} else if (bott<=0 || bott ==""){
-        document.getElementById('cut-text-bottom').style.display = 'none';
+        document.getElementById('cut-text-bottom').style.display = '0';
 	}
 		
 	if(top>0){
-		$('#cut-text-top').css('display','block');
+		document.getElementById('cut-text-top').style.display = 'block';
 		let topF = parseFloat((top*3)/10);
 		topF = new Fraction(topF);
 		topF = topF.toFraction(true);
 		topF = topF.replace(" ", "-");
-		$('#cut-text-top').html(topF);
+		document.getElementById('cut-text-top').innerHTML = topF;
 	} else if (top<=0 || top ==""){
-		$('#cut-text-top').css('display','none');
+		document.getElementById('cut-text-top').style.display = 'none';
 	}
+		
 }
 

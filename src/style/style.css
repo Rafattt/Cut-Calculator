@@ -168,25 +168,26 @@ body, html {
 
 #bottom-text {
 	margin-top:10px;
-	margin-left: 95px;
+	margin-left: 75px;
 }
 
 #bottom {
 	position: absolute;
 	top:140px;
-	left:265px;
+	left:245px;
 	width:50px;
+	pointer-events: none;
 }
 
 #top-text {
 	margin-top:10px;
-	margin-left: 95px;
+	margin-left: 75px;
 }
 
 #top {
 	position: absolute;
 	top:179px;
-	left:225px;
+	left:205px;
 	width:50px;
 	pointer-events: none;
 	background-color: lightgrey;
@@ -195,13 +196,13 @@ body, html {
 #checkBox {
 	position: absolute;
 	top:179px;
-	left: 285px;
+	left: 265px;
 }
 
 #checkbox-text {
 	position: absolute;
 	top:179px;
-	left: 300px;
+	left: 280px;
 	color: black;
 }
 
@@ -248,11 +249,16 @@ body, html {
 	width:200px;
 	margin-top:5px;
 	clear:both;
-	
-	
-
-
 }
+
+#result-text {
+	margin-left: auto;
+	margin-right:auto;
+	text-align: center;
+	height: 50px;
+	display: inline-block;
+}
+
 
 #final-feet {
 
@@ -373,7 +379,7 @@ body, html {
 #rough-size {
 	width: 50px;
 	float:left;
-	margin-left: 95px;
+	margin-left: 75px;
 }
 
 #inches {
