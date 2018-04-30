@@ -103,11 +103,13 @@ let app = {
 		let bott = "";
 		let top = $('#top').val(); //getting number of inch to cut from top from input field
 		if(top !==0 && top !== "" && top.indexOf("-")>0){  //converting "0-0" format to "0.0" format
-			
 				top = sizeConvertion.convert(top);
+				bott = bott-top;
+				console.log("Bott "+bott);
 			} else if(top.indexOf("-")<0) {
 				top = top;
 			}
+			
 		let totalCut = "";
 		
 		
@@ -159,12 +161,13 @@ let app = {
 			return false;
 		}
 	});
+	},
+	clickSubmit: () =>{
+		document.getElementById("sub").click()
 	}
 }
 
 app.clickByEnter();
 app.getHeight();
 app.checkbox();
-
-
 
