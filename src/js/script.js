@@ -68,6 +68,7 @@ let app = {
 	},
 	displaySlabSize: (roSize) => {
 			displaySlabSizeInch(roSize);
+			displayDoorWithFrameSize(roSize);
 	},
 	displaySlabSizeInFeets: (roSize) => {
 		showSizeinFeets(roSize);
@@ -130,6 +131,10 @@ let app = {
 			bott = 0;
 		}
 
+		if(bott>0 && bott != ""){
+			document.getElementById('top').style.pointerEvents = 'auto';
+		}
+
 		
 			
 		if($('#top').val()!== 0 && $('#top').val() !== ""){ //if top trim field is not blank setting totalCut value as bottom+top cuts
@@ -138,36 +143,24 @@ let app = {
 			totalCut = bott+top;
 		}
 			
-					
+		warningBottom(bott, totalCut, roughOpeningSize);
+		warningTop(top);
+				
 		bott = (bott*10)/3; //changing bottom cut number of inches to pixels
 		top =  (top*10)/3;  //changing top cut number of inches to pixels
 		cutAnimation(roughOpeningSize, bott, top);
-
+		
 		
 	},
-	checkbox:  () => {
-		let controlNumber = 0;
-		$('#checkBox').click(function(event){
-		if(controlNumber === 0){
-			$('#top').css('background-color','white');
-			$('#top').css('pointer-events', 'auto');
-			controlNumber = 1;
-			return true;
-		} else {
-			$('#top').css('background-color','lightgrey');
-			$('#top').css('pointer-events', 'none');
-			$('#top').val(0);
-			controlNumber = 0;
-			return false;
-		}
-	});
-	},
+	
 	clickSubmit: () =>{
 		document.getElementById("sub").click()
-	}
+	} 
+	
 }
 
 app.clickByEnter();
 app.getHeight();
-app.checkbox();
+
+
 

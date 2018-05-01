@@ -2,6 +2,7 @@ const displaySlabSizeInch = (roSize) => { // displaying slub size in "final" fie
     let slabSize = roSize -2;
     slabSize = convertToFraction(slabSize);
     document.getElementById("final").innerHTML = slabSize+'"';
+    return slabSize;
 }
 
 const displaySlabSizeFeet = (data) => {

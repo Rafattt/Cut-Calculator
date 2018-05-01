@@ -32,10 +32,8 @@
 				<div class="menu-text" id="rough-title-text">Rough Opening Size</div><input type="text" id="rough-size" value=0>
 				<div id="inches">Inches</div>
 				<button type="submit" id="sub" form="nameform" value="Submit">Submit</button>
-				<div class="menu-text" id="bottom-text">Bottom Trim</div><input type="text" id="bottom">
-				<input id="checkBox" type="checkbox" checked>
-				<div id="checkbox-text">Trim Bottom Only</div>
-				<div class="menu-text" id="top-text">Top Trim</div><input type="text" id="top" onChange="app.clickSubmit()">
+				<div class="menu-text" id="bottom-text">Bottom Trim</div><input type="text" id="bottom" value="0">
+				<div class="menu-text" id="top-text">Top Trim</div><input type="text" id="top" onChange="app.clickSubmit()" value="0">
 				<div id="warning-bottom"><b>Warning - max bottom cut for panel doors is 7"!</b></div>
 				<div id="warning-top"><b>Warning - max top cut for panel doors is 3"!</b></div>
 			</div>
@@ -82,7 +80,10 @@
 	</div>
 	<script src="src/js/jquery-3.2.1.min.js"></script>
 	<script src="src/js/sizeConvert.js"></script>
+	<script src="src/js/displayDoorWithFrameSize.js"></script>
 	<script src="src/js/displaySlabSize.js"></script>
+	<script src="src/js/warningBottom.js"></script>
+	<script src="src/js/warningTop.js"></script>
 	<script src="src/js/script.js"></script>
 	<script src="src/js/fraction.js"></script>
 	<script src="src/js/finalSizeFeet.js"></script>
