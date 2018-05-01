@@ -7,7 +7,7 @@ const convertToFeets = (data) => {
             wholeInch = firstPart / secondPart;
         } else {
             wholeInch = firstPart + "/" + secondPart;
-            console.log(wholeInch);
+            
             return wholeInch; 
         }
 

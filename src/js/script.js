@@ -29,7 +29,7 @@ let variables = {
 			heightTemp = 96;
 		} 
 		const height = heightTemp;
-		console.log("test");
+
 		return height;
 	}
 	
@@ -47,6 +47,7 @@ let app = {
 	},
 	getHeight: () => {//getting height (in inches) of rough opening and choosing slab height to cut (one size bigger than RO sizes)
 		document.getElementById("sub").onclick = () => { //starts when user clicks on submit button
+			
 			let roughOpeningSize = variables.roughOpeningSize;
 			variables.roughSizeValue = parseFloat(document.getElementById("rough-size").value);
 			if(variables.roughSize !==0 && variables.roughSize !== "" && variables.roughSize().indexOf("-")>0){ //checks if user typed somethng into "#rough-size" field
@@ -76,7 +77,6 @@ let app = {
 	setSlabHeight: () => {
 		let roSize = variables.getSlabHeight();
 
-		console.log(roSize);
 		if(roSize === 80){
 			document.getElementById('door').style.height = '267px';
 			document.getElementById('door-height').style.height = '267px';
@@ -102,11 +102,10 @@ let app = {
 	},
 	cutCalculator: (roughOpeningSize) => {
 		let bott = "";
-		let top = $('#top').val(); //getting number of inch to cut from top from input field
+		let top = document.getElementById('top').value; //getting number of inch to cut from top from input field
 		if(top !==0 && top !== "" && top.indexOf("-")>0){  //converting "0-0" format to "0.0" format
 				top = sizeConvertion.convert(top);
 				bott = bott-top;
-				console.log("Bott "+bott);
 			} else if(top.indexOf("-")<0) {
 				top = top;
 			}
@@ -126,7 +125,7 @@ let app = {
 			
 		} else if (roughOpeningSize === 0) {
 			bott = 0;
-			$('#bottom').val(bott);
+			document.getElementById('bottom').value = bott;
 		} else { //if RO field is blank set bottom cut to 0
 			bott = 0;
 		}
@@ -145,6 +144,7 @@ let app = {
 			
 		warningBottom(bott, totalCut, roughOpeningSize);
 		warningTop(top);
+		description(top,bott);
 				
 		bott = (bott*10)/3; //changing bottom cut number of inches to pixels
 		top =  (top*10)/3;  //changing top cut number of inches to pixels

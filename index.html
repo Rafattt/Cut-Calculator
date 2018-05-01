@@ -29,7 +29,7 @@
 		</div>
 		<div class="row second-row">
 			<div class="col-md-4">	
-				<div class="menu-text" id="rough-title-text">Rough Opening Size</div><input type="text" id="rough-size" value=0>
+				<div class="menu-text" id="rough-title-text">Rough Opening Size</div><input type="text" id="rough-size" value=0 onChange="document.getElementById('top').value = 0">
 				<div id="inches">Inches</div>
 				<button type="submit" id="sub" form="nameform" value="Submit">Submit</button>
 				<div class="menu-text" id="bottom-text">Bottom Trim</div><input type="text" id="bottom" value="0">
@@ -74,22 +74,25 @@
 				</div>
 				<div class="menu-text" id="net-text">Door with frame size:</div><input type="text" id="net-frame">			
 			</div>
-			<input type="text" id="description"><button id="copy-button">Copy to clipboard</button>
+			<input type="text" id="description"><button id="copy-button" onclick="copy()">Copy to clipboard</button>
 		</div>
 		
 	</div>
 	<script src="src/js/jquery-3.2.1.min.js"></script>
+	<script src="src/js/copy.js"></script>
 	<script src="src/js/sizeConvert.js"></script>
 	<script src="src/js/displayDoorWithFrameSize.js"></script>
+	<script src="src/js/description.js"></script>
 	<script src="src/js/displaySlabSize.js"></script>
 	<script src="src/js/warningBottom.js"></script>
 	<script src="src/js/warningTop.js"></script>
 	<script src="src/js/script.js"></script>
-	<script src="src/js/fraction.js"></script>
+	<script src="src/js/ven/fraction.js"></script>
 	<script src="src/js/finalSizeFeet.js"></script>
 	<script src="src/js/convertToFraction.js"></script>
 	<script src="src/js/convertToFeets.js"></script>
 	<script src="src/js/cutAnimation.js"></script>
+
 	
 	
 </body>
