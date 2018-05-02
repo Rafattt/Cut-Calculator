@@ -1,5 +1,5 @@
 /*
-Darpet Cut Calculator 1.1
+Cut Calculator 2.0
 Author: Rafal Kmiecik 
 rafalkmiecik@gmail.com
 */
