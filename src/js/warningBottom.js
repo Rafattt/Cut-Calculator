@@ -1,4 +1,4 @@
- warningBottom = (bott, totalCut, roughOpeningSize) =>{
+ const warningBottom = (bott, totalCut, roughOpeningSize) =>{
 	
 	if(bott<=7 && bott !== 0 && bott !== ""){
         document.getElementById('warning-bottom').style.display = 'none;'

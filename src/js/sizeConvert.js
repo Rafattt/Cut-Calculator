@@ -16,7 +16,7 @@ const sizeConvertion = {
     
 }
 
-checkIfFraction = (arra) => {
+const checkIfFraction = (arra) => {
     if(arra.indexOf("/")>0){
         return true;
     } else {

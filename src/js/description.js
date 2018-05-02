@@ -1,4 +1,4 @@
- description = (top, bott) => {
+ const description = (top, bott) => {
 	if(top == 0 || top == ""){
         let frac = convertToFraction(bott);
         document.getElementById('description').value = 'Cut top 0\", cut bottom '+frac+'\", Lock 36\"';

@@ -1,4 +1,4 @@
-function copy() {
+const copy = () => {
   console.log("!!!!!!!!!!!!");
   let copyText = document.getElementById("description");
   copyText.select();
