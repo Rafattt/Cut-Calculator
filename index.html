@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<link rel="stylesheet" href="src/style/bootstrap.min.css">
 		<link rel="stylesheet" href="src/style/style.css">
-		<link media="print" href="src/style/styleprint.css" type="text/css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans" rel="stylesheet">
 	</head>
 	
 
@@ -23,15 +23,15 @@
 				</div>
 			</div>
 			<div class="col-md-8 right-side">
-				<p id="cut-title">Cut</p>
-				<p id="calculator-title">Calculator</p>
+				<p id="cut-title">CUT</p>
+				<p id="calculator-title">CALCULATOR</p>
 			</div>
 		</div>
 		<div class="row second-row">
-			<div class="col-md-4">	
+			<div class="col-md-4 side-column">	
 				<div class="menu-text" id="rough-title-text">Rough Opening Size</div><input type="text" id="rough-size" value=0 onChange="document.getElementById('top').value = 0">
 				<div id="inches">Inches</div>
-				<button type="submit" id="sub" form="nameform" value="Submit">Submit</button>
+				<button type="submit" id="sub" class="btn-primary" form="nameform" value="Submit">Submit</button>
 				<div class="menu-text" id="bottom-text">Bottom Trim</div><input type="text" id="bottom" value="0">
 				<div class="menu-text" id="top-text">Top Trim</div><input type="text" id="top" onChange="app.clickSubmit()" value="0">
 				<div id="warning-bottom"><b>Warning - max bottom cut for panel doors is 7"!</b></div>
@@ -59,7 +59,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 side-column">
 				<div class="menu-text" id="final-text">Slab Size</div><div id="final-slab-size-text">Inches:</div>
 				<div id="final"></div>
 				<div id="final-slab-size-text-feet">Feets:</div>
@@ -74,7 +74,10 @@
 				</div>
 				<div class="menu-text" id="net-text">Door with frame size:</div><input type="text" id="net-frame">			
 			</div>
-			<input type="text" id="description"><button id="copy-button" onclick="copy()">Copy to clipboard</button>
+			
+		</div>
+		<div class="row" id="desc-row">
+			<input type="text" id="description"><button class="btn-primary" id="copy-button" onclick="copy()">Copy to clipboard</button>
 		</div>
 		
 	</div>
@@ -88,6 +91,7 @@
 	<script src="src/js/warningTop.js"></script>
 	<script src="src/js/script.js"></script>
 	<script src="src/js/ven/fraction.js"></script>
+	<script src="src/js/ven/html2canvas.js"></script>
 	<script src="src/js/finalSizeFeet.js"></script>
 	<script src="src/js/convertToFraction.js"></script>
 	<script src="src/js/convertToFeets.js"></script>

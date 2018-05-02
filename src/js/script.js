@@ -23,9 +23,9 @@ let variables = {
 		let slab = roughOpeningSize - 2;
 		if(slab<=80){
 			heightTemp = 80;
-		} else if(slab<=84) {
+		} else if(slab<84) {
 			heightTemp = 84;
-		} else if (slab<=96){
+		} else if (slab<96){
 			heightTemp = 96;
 		} 
 		const height = heightTemp;
@@ -115,10 +115,11 @@ let app = {
 		
 		if(roughOpeningSize>0 && roughOpeningSize!==""){ //if RO field is not blank setting bottom cut as slab height - (ro-2)- top trim
 			bott = (variables.getSlabHeight()-(roughOpeningSize-2))-top;
+
+	
 			let bottF = parseFloat(bott);
-			bottF = new Fraction(bottF);
-			bottF = bottF.toFraction(true);
-			bottF = bottF.replace(" ", "-");
+			console.log("bottF "+bottF);
+			bottF =convertToFraction(bottF);
 			
 			
 			document.getElementById('bottom').value = bottF;
