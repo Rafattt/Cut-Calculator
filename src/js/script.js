@@ -1,5 +1,5 @@
 /*
-Cut Calculator 2.0
+Cut Calculator 2.1
 Author: Rafal Kmiecik 
 rafalkmiecik@gmail.com
 */
