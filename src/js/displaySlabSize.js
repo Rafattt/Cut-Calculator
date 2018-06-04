@@ -11,8 +11,24 @@ const displaySlabSizeFeet = (data) => {
     let feetInchArray = convertToFeets(sizeinFeets);
     if((variables.roughSize()-2) % 12 ===0){
         document.getElementById("final-feet").innerHTML = convertToFeets(data)/12+"'";
-    } else if (variables.roughSize().indexOf('-')<0 && (variables.roughSize()-2) % 12 ===0){
-        document.getElementById("final-feet").innerHTML = convertToFraction(variables.roughSize()/12);
+    } else if (variables.roughSize().indexOf('-')<0 && (variables.roughSize()-2) % 12 !==0){ //quick fix for inches instead of feet bug
+        
+        let feetToInch = convertToFraction((variables.roughSize()-2)/12).split('-');
+        let feetToInchLast = feetToInch[1].split("/");
+         //check if last number is 12
+        while(feetToInchLast[1]/12 !==1){
+            let findMultiply = 12/feetToInchLast[1];
+            feetToInchLast[1]*=findMultiply;
+            feetToInchLast[0]*=findMultiply;
+        }
+        console.log(feetToInchLast);
+        document.getElementById("final-feet").innerHTML = feetInchArray[0] + "-";
+        document.getElementById("final-feet-small1").innerHTML = feetToInchLast[0];
+        document.getElementById("final-feet-small2").innerHTML = '/';
+        document.getElementById("final-feet-small3").innerHTML = feetToInchLast[1];
+        console.log("feetInchArray[1] "+feetInchArray[1]);
+        console.log(feetToInchLast[1]);
+        console.log(convertToFraction(variables.roughSize()/12));
     } else {
 
        
