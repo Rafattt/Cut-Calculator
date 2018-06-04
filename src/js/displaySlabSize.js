@@ -22,13 +22,11 @@ const displaySlabSizeFeet = (data) => {
             feetToInchLast[0]*=findMultiply;
         }
         console.log(feetToInchLast);
-        document.getElementById("final-feet").innerHTML = feetInchArray[0] + "-";
-        document.getElementById("final-feet-small1").innerHTML = feetToInchLast[0];
-        document.getElementById("final-feet-small2").innerHTML = '/';
-        document.getElementById("final-feet-small3").innerHTML = feetToInchLast[1];
-        console.log("feetInchArray[1] "+feetInchArray[1]);
-        console.log(feetToInchLast[1]);
-        console.log(convertToFraction(variables.roughSize()/12));
+        document.getElementById("final-feet").innerHTML = feetInchArray[0] + "'"+"-" +feetToInchLast[0];
+        document.getElementById("final-feet-small2").innerHTML = '';
+        document.getElementById("final-feet-small1").innerHTML = '';
+        document.getElementById("final-feet-small3").innerHTML = '';
+        document.getElementById("final-feet-small4").innerHTML = '';
     } else {
 
        
