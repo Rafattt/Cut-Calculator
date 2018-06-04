@@ -8,11 +8,14 @@ const displaySlabSizeInch = (roSize) => { // displaying slub size in "final" fie
 const displaySlabSizeFeet = (data) => {
 
     let sizeinFeets = data;
+    let feetInchArray = convertToFeets(sizeinFeets);
     if((variables.roughSize()-2) % 12 ===0){
         document.getElementById("final-feet").innerHTML = convertToFeets(data)/12+"'";
+    } else if (variables.roughSize().indexOf('-')<0 && (variables.roughSize()-2) % 12 ===0){
+        document.getElementById("final-feet").innerHTML = convertToFraction(variables.roughSize()/12);
     } else {
 
-        let feetInchArray = convertToFeets(sizeinFeets);
+       
 
         document.getElementById("final-feet").innerHTML = feetInchArray[0] + "-"+feetInchArray[1];
         document.getElementById("final-feet-small1").innerHTML = feetInchArray[2];

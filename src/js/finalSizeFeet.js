@@ -4,7 +4,6 @@ const showSizeinFeets = (roSize) =>{ //displaying slab size in feets
 	netFeet = netFeet/12; //converting inches to feets
 
 	let fracFeet = convertToFraction(netFeet);
-	// TO WYZEJ
 
 
 		
