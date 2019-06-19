@@ -5,10 +5,29 @@ rafalkmiecik@gmail.com
 */
 "use strict";
 
+const getRoughtSize = () => {
+	let roughSizeDecimal = document.getElementById("rough-size").value;
+	let roughOpeningSize;
+			console.log(roughSizeDecimal);
+			if(roughSizeDecimal % 1 !== 0){
+				let roughSizeDecimalArr = [];
+				roughSizeDecimalArr = roughSizeDecimal.split("-");
+				roughSizeDecimalArr[1] = eval(roughSizeDecimalArr[1]);
+				console.log(roughSizeDecimalArr)
+				roughOpeningSize = parseFloat(roughSizeDecimalArr[0])+parseFloat(roughSizeDecimalArr[1]);
+			} else {
+				roughOpeningSize = parseFloat(document.getElementById("rough-size").value);
+			}
+			
+			console.log(roughOpeningSize);
+
+			return roughOpeningSize;
+}
+
 let variables = {
 	roughOpeningSize: 0,
 	roughSize: () =>  document.getElementById("rough-size").value, //geting value from input field 
-	roughSizeValue: ()  =>  parseFloat(document.getElementById("rough-size").value),//geting value from input field and converting it to floats
+	roughSizeValue: ()  =>  getRoughtSize(),//geting value from input field and converting it to floats
 
 	submitButton: document.getElementById("sub"),
 	slab: 0, //default height of slab
@@ -16,7 +35,7 @@ let variables = {
 		let heightTemp = 0;
 		let roughOpeningSize = 0;
 		if(parseFloat(document.getElementById("rough-size").value)>0 && document.getElementById("rough-size").value !==""){
-			roughOpeningSize = parseFloat(document.getElementById("rough-size").value);
+			roughOpeningSize = getRoughtSize();
 		} else {
 			
 		}

@@ -1,10 +1,8 @@
-@page {
-    size: A4 landscape;
-}
+
 	body,html{
 		width: 70% !important;
-		height: 30%!important;
-
+		heigth: 300%!important;
+		container: 30%!important;
 	}
 	
 	#bottom-cut-draw {

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+	<title>Darpet Cut Calculator</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link media="print" href="styleprint.css" type="text/css" rel="stylesheet">
+	<script src="jquery-3.2.1.min.js"></script>
+	<script src="script.js"></script>
+	<script src="checkbox.js"></script>
+	<script src="warningbottom.js"></script>
+	<script src="warningTop.js"></script>
+	<script src="description.js"></script>
+	<script src="cutAnimation.js"></script>
+	<script src="cut.js"></script>
+	<script src="fraction.js"></script>
+	<script src="copy.js"></script>
+
+	
+	
+</html>
+<body>
+	<div class="container">
+			
+		<div class="row first-row">
+			<div class="col-md-4  left-side" >
+				<div id="logo">
+					<img src="./images/darpetlogo.png" alt="Darpet">
+				</div>
+			</div>
+			<div class="col-md-8 right-side">
+				<p id="cut-title">Cut</p>
+				<p id="calculator-title">Calculator</p>
+			</div>
+		</div>
+		<div class="row second-row">
+			<div class="col-md-4">	
+				<div class="menu-text" id="rough-title-text">Rough Opening Size</div><input type="text" id="rough-size">
+				<div id="inches">Inches</div>
+				<button type="submit" id="sub" form="nameform" value="Submit">Submit</button>
+				<div class="menu-text" id="bottom-text">Bottom Trim</div><input type="text" id="bottom">
+				<input id="checkBox" type="checkbox" checked>
+				<div id="checkbox-text">Trim Bottom Only</div>
+				<div class="menu-text" id="top-text">Top Trim</div><input type="text" id="top">
+				<div id="warning-bottom"><b>Warning - max bottom cut for panel doors is 7"!</b></div>
+				<div id="warning-top"><b>Warning - max top cut for panel doors is 3"!</b></div>
+			</div>
+			<div class="col-md-4" id ="door-container">
+				<div id="door">
+					<div id="hole">
+					</div>
+					<div id="bottom-cut-draw">
+						<div id="cut-text-bottom">7</div>
+					</div>
+					<div id="max-trim-bottom">
+						<div id="maxtrim-bottom-text">7" MAX</div>
+					</div>
+					<div id="max-trim-top">
+						<div id="maxtrim-bottom-text">3" MAX</div>
+					</div>
+					<div id="top-cut-draw">
+						<div id="cut-text-top">3</div>
+					</div>
+					<div id="door-height">
+					</div>
+					<div id="height-center">6'-8"
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="menu-text" id="final-text">Slab Size</div><input type="text" id="final">
+				<div class="menu-text" id="net-text">Door with frame size:</div><input type="text" id="net-frame">			
+			</div>
+			<input type="text" id="description"><button id="copy-button">Copy to clipboard</button>
+		</div>
+		
+	</div>
+	
+</body>
